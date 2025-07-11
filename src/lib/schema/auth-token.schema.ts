@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { EProvider, IAuthTokenAction, IAuthTokenState } from '@ploutos/common';
 import { Document, SchemaTypes } from 'mongoose';
 
 @Schema({
@@ -10,24 +11,24 @@ export class AuthToken extends Document {
     @Prop({
         type: String,
         required: true,
-        enum: AuthTokenAction,
+        enum: IAuthTokenAction,
     })
-    action: AuthTokenAction;
+    action: IAuthTokenAction;
 
     @Prop({
         type: String,
         required: true,
-        enum: ProviderType,
+        enum: EProvider,
     })
-    provider: ProviderType;
+    provider: EProvider;
 
     @Prop({
         type: String,
         required: true,
-        enum: AuthTokenState,
-        default: AuthTokenState.Pending,
+        enum: IAuthTokenState,
+        default: IAuthTokenState.Pending,
     })
-    status: AuthTokenState;
+    status: IAuthTokenState;
 
     @Prop({
         type: SchemaTypes.ObjectId,
