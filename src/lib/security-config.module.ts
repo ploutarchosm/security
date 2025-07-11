@@ -2,20 +2,15 @@ import {
     DynamicModule,
     Global,
     Logger,
-    MiddlewareConsumer,
     Module,
-    NestModule,
     OnModuleInit,
-    RequestMethod
 } from "@nestjs/common";
 import { SecurityConfigDto, validateSecurityConfig } from "./dto/security-config.dto";
 import { ConfigService } from '@nestjs/config';
-import { SecurityExtensionsMiddleware } from "./middlewares/security-extensions-middleware.service";
-import { ApiTokenMiddleware } from "./middlewares/api-token.middleware";
 
 @Global()
 @Module({})
-export class SecurityConfigModule implements OnModuleInit, NestModule {
+export class SecurityConfigModule implements OnModuleInit {
     private readonly logger = new Logger(SecurityConfigModule.name);
     private static config: SecurityConfigDto;
 
@@ -46,12 +41,5 @@ export class SecurityConfigModule implements OnModuleInit, NestModule {
 
     onModuleInit() {
         this.logger.log('Security config module initialized successfully');
-    }
-
-    configure(consumer: MiddlewareConsumer): void {
-        consumer.apply(ApiTokenMiddleware, SecurityExtensionsMiddleware).forRoutes({
-            path: '*path',
-            method: RequestMethod.ALL,
-        });
     }
 }

@@ -28,6 +28,8 @@ import { SecurityCsrfController } from "./controllers/security-csrf.controller";
 import { SecurityAuthController } from "./controllers/security-auth.controller";
 import { AuthService } from "./services/auth.service";
 import { PasswordService } from "@ploutos/common";
+import { ApiTokenMiddleware} from "./middlewares/api-token.middleware";
+import { SecurityExtensionsMiddleware } from "./middlewares/security-extensions-middleware.service";
 import dayjs from 'dayjs';
 
 @Module({})
@@ -107,6 +109,16 @@ export class SecurityModule implements NestModule, OnModuleInit, OnApplicationSh
     }
 
     configure(consumer: MiddlewareConsumer): void {
+
+        consumer.apply(
+            ApiTokenMiddleware,
+            SecurityExtensionsMiddleware
+        )
+        .forRoutes({
+            path: '*path',
+            method: RequestMethod.ALL,
+        })
+
         consumer
             .apply(
                 RequestContextMiddleware,
