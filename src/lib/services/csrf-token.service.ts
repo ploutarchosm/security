@@ -1,6 +1,6 @@
 import * as crypto from 'crypto';
 import { Inject, Injectable } from '@nestjs/common';
-import { SecurityConfigDto } from "../dto/securityt-config.dto";
+import { SecurityConfigDto } from "../dto/security-config.dto";
 
 @Injectable()
 export class CsrfTokenService {

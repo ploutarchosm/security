@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { NextFunction, Request } from 'express';
 import { AppConfigDto } from "@ploutos/application";
-import { SecurityConfigDto } from "../dto/securityt-config.dto";
+import { SecurityConfigDto } from "../dto/security-config.dto";
 import { CsrfTokenService } from "../services/csrf-token.service";
 
 @Injectable()

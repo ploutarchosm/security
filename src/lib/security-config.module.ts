@@ -8,7 +8,7 @@ import {
     OnModuleInit,
     RequestMethod
 } from "@nestjs/common";
-import { SecurityConfigDto, validateSecurityConfig } from "./dto/securityt-config.dto";
+import { SecurityConfigDto, validateSecurityConfig } from "./dto/security-config.dto";
 import { ConfigService } from '@nestjs/config';
 import { SecurityExtensionsMiddleware } from "./middlewares/security-extensions-middleware.service";
 import { ApiTokenMiddleware } from "./middlewares/api-token.middleware";
