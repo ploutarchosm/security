@@ -23,6 +23,7 @@ export class AuthService extends BasedAuthService {
         private readonly authTokenService: AuthTokenService,
         private readonly apiTokenService: AuthApiService,
         private readonly passwordService: PasswordService,
+        @Inject(INJECTION_TOKENS.PROVIDER_SERVICE)
         private readonly providerService: ProviderService,
         @Inject(INJECTION_TOKENS.USER_SERVICE)
         private readonly userService: UserService,
