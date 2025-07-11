@@ -27,6 +27,7 @@ import { AuthTokenService } from "./services/auth-token.service";
 import { SecurityCsrfController } from "./controllers/security-csrf.controller";
 import { SecurityAuthController } from "./controllers/security-auth.controller";
 import dayjs from 'dayjs';
+import {AuthService} from "./services/auth.service";
 
 @Module({})
 export class SecurityModule implements NestModule, OnModuleInit, OnApplicationShutdown, OnApplicationBootstrap {
@@ -81,6 +82,7 @@ export class SecurityModule implements NestModule, OnModuleInit, OnApplicationSh
                 SecurityAuthController
             ],
             providers: [
+                AuthService,
                 AuthApiService,
                 AuthTokenService,
                 CsrfTokenService
