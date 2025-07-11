@@ -15,7 +15,7 @@ import { ProviderService, UserService } from "@ploutos/admin";
 import { isEmpty } from "lodash";
 import { AuthToken } from "../schema/auth-token.schema";
 import { LoginDto } from "../dto/login.dto";
-import dayjs from "dayjs";
+import { dayjs } from "@ploutos/common";
 
 @Injectable()
 export class AuthService extends BasedAuthService {

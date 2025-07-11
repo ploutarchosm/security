@@ -2,7 +2,7 @@ import {Inject, Injectable, NestMiddleware} from '@nestjs/common';
 import { Response, Request, NextFunction } from 'express';
 import * as uuid_1 from 'uuid';
 import * as clsHooked from 'cls-hooked';
-import {AppConfigDto} from "@ploutos/application";
+import { AppConfigDto } from "@ploutos/application";
 
 @Injectable()
 export class RequestContextMiddleware implements NestMiddleware {

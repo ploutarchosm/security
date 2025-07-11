@@ -6,7 +6,7 @@ import * as clsHooked from 'cls-hooked';
 import { AppConfigDto } from "@ploutos/application";
 import { AuthApiService } from "../services/auth-api.service";
 import { UserService } from "@ploutos/admin";
-import * as dayjs from 'dayjs';
+import { dayjs } from '@ploutos/common';
 
 @Injectable()
 export class ApiTokenMiddleware implements NestMiddleware {

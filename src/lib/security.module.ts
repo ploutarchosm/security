@@ -30,7 +30,7 @@ import { AuthService } from "./services/auth.service";
 import { PasswordService } from "@ploutos/common";
 import { ApiTokenMiddleware} from "./middlewares/api-token.middleware";
 import { SecurityExtensionsMiddleware } from "./middlewares/security-extensions-middleware.service";
-import dayjs from 'dayjs';
+import { dayjs } from "@ploutos/common";
 
 @Module({})
 export class SecurityModule implements NestModule, OnModuleInit, OnApplicationShutdown, OnApplicationBootstrap {

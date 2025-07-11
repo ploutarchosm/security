@@ -35,7 +35,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@ploutos/admin": "^1.1.1",
     "@ploutos/application": "^0.1.5",
-    "@ploutos/common": "^1.2.1",
+    "@ploutos/common": "^1.2.2",
     "@types/cls-hooked": "^4.3.9",
     "@types/compression": "^1.8.1",
     "@types/lodash": "^4.17.20",
