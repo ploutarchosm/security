@@ -1,6 +1,6 @@
 {
   "name": "@ploutos/security",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": " A Security package for Nest.JS application. Secure middlewares and create app context.",
   "author": "Ploutarchos Michaelides",
   "license": "MIT",
